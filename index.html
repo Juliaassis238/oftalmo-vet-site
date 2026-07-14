@@ -92,6 +92,13 @@
     position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;
     background-size:cover;background-position:center;background-repeat:no-repeat;
     padding-top:110px;
+    background-image: url('assets/capa_desktop.png');
+  }
+  @media(max-width:880px){
+    .hero{
+      background-image: url('assets/capa_mobile.png') !important;
+      background-position: center top;
+    }
   }
   .hero::before{
     content:'';position:absolute;inset:0;
@@ -252,18 +259,7 @@
   <a href="#contato" class="btn-cta">Agendar</a>
 </div>
 
-  <script>
-    function updateHeroBg() {
-      const hero = document.querySelector('.hero');
-      if (window.innerWidth > 880) {
-        hero.style.backgroundImage = "url('assets/capa_desktop.png')";
-      } else {
-        hero.style.backgroundImage = "url('assets/capa_mobile.png')";
-      }
-    }
-    updateHeroBg();
-    window.addEventListener('resize', updateHeroBg);
-  </script>
+<!-- JavaScript de troca de fundo removido em favor do CSS Media Queries para maior performance -->
 
 <section class="hero" id="top">
   <div class="iris-field"></div>
