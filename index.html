@@ -130,13 +130,16 @@
             box-shadow: 0 8px 25px rgba(15, 58, 92, 0.3);
         }
 
-        /* HERO SECTION - FULL BLEED */
+        /* HERO SECTION - FULL BLEED CLEAN */
         .hero {
             margin-top: 70px;
             min-height: 100vh;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
             overflow: hidden;
         }
@@ -145,89 +148,62 @@
             content: '';
             position: absolute;
             top: 0;
-            right: -150px;
-            width: 500px;
-            height: 500px;
-            background: rgba(212, 175, 55, 0.08);
-            border-radius: 50%;
-            animation: floatAnimation 25s infinite ease-in-out;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -100px;
-            left: -100px;
-            width: 400px;
-            height: 400px;
-            background: rgba(45, 143, 163, 0.06);
-            border-radius: 50%;
-            animation: floatAnimation 30s infinite ease-in-out reverse;
-        }
-
-        @keyframes floatAnimation {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(40px); }
-        }
-
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-            padding: 0 5%;
-            position: relative;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(15, 58, 92, 0.3) 0%, rgba(45, 143, 163, 0.2) 100%);
             z-index: 1;
         }
 
-        .hero-content {
-            color: white;
-            animation: slideInLeft 1s ease-out;
+        .hero-overlay {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            text-align: center;
         }
 
-        @keyframes slideInLeft {
+        .hero-logo {
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--gold);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: floatLogo 6s ease-in-out infinite;
+        }
+
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-cta {
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateX(-50px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
-                transform: translateX(0);
+                transform: translateY(0);
             }
         }
 
-        .hero-content h1 {
-            font-size: 3.8rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.15;
-            font-weight: 900;
-            letter-spacing: -1px;
-        }
-
-        .hero-content h1 .gold-text {
-            color: var(--gold);
-        }
-
-        .hero-content p {
-            font-size: 1.15rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            line-height: 1.8;
-            letter-spacing: 0.3px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
+        .btn-hero {
             background: white;
             color: var(--primary);
-            padding: 1.1rem 2.8rem;
+            padding: 1.2rem 3rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
@@ -236,61 +212,12 @@
             cursor: pointer;
             font-size: 1rem;
             letter-spacing: 0.5px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
         }
 
-        .btn-primary:hover {
+        .btn-hero:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            padding: 1.1rem 2.8rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            border: 2px solid white;
-            cursor: pointer;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .hero-image {
-            animation: slideInRight 1s ease-out;
-            text-align: center;
-            position: relative;
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .hero-image img {
-            width: 100%;
-            max-width: 550px;
-            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.25));
-            animation: floatImage 6s ease-in-out infinite;
-        }
-
-        @keyframes floatImage {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-25px); }
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.35);
         }
 
         /* SEÇÃO DE SERVIÇOS */
@@ -541,6 +468,31 @@
             object-fit: cover;
         }
 
+        /* MAPA */
+        .map-section {
+            padding: 7rem 5%;
+            background: white;
+        }
+
+        .map-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .map-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            margin-top: 3rem;
+            height: 500px;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         /* CONTATO */
         .contact {
             padding: 7rem 5%;
@@ -776,27 +728,19 @@
                 display: none;
             }
 
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 2rem 5%;
+            .hero {
+                min-height: 80vh;
             }
 
-            .hero-content h1 {
-                font-size: 2.2rem;
+            .hero-logo {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5rem;
             }
 
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                text-align: center;
+            .btn-hero {
+                padding: 1rem 2rem;
+                font-size: 0.9rem;
             }
 
             .services-grid {
@@ -843,11 +787,21 @@
                 padding: 0.7rem 1.5rem;
                 font-size: 0.85rem;
             }
+
+            .map-wrapper {
+                height: 300px;
+            }
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 1.8rem;
+            .hero {
+                min-height: 60vh;
+            }
+
+            .hero-logo {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
             }
 
             .section-title {
@@ -880,6 +834,10 @@
             .contact-form {
                 padding: 1.5rem;
             }
+
+            .map-wrapper {
+                height: 250px;
+            }
         }
 
         /* SCROLL REVEAL */
@@ -905,25 +863,21 @@
                 <li><a href="#services">Serviços</a></li>
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#map">Localização</a></li>
                 <li><a href="#contact">Contato</a></li>
             </ul>
             <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView()">Agende Agora</button>
         </div>
     </nav>
 
-    <!-- HERO SECTION - FULL BLEED COM IMAGEM DE FUNDO -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Oftalmologia Veterinária de <span class="gold-text">Excelência</span></h1>
-                <p>Cuidado especializado para a saúde ocular do seu pet. Tecnologia de ponta, profissional qualificada e atendimento personalizado com luxo e sofisticação.</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView()">Agende uma Consulta</button>
-                    <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView()">Conheça Nossos Serviços</button>
-                </div>
+    <!-- HERO SECTION - FULL BLEED CLEAN COM LOGO E BOTÃO -->
+    <section class="hero" id="home" style="background-image: url('assets/capa_desktop.webp');">
+        <div class="hero-overlay">
+            <div class="hero-logo">
+                <i class="fas fa-eye"></i>
             </div>
-            <div class="hero-image">
-                <img src="assets/mascote.png" alt="Mascote Oftalmo Vet" id="mascote">
+            <div class="hero-cta">
+                <button class="btn-hero" onclick="document.getElementById('contact').scrollIntoView()">Agende uma Consulta</button>
             </div>
         </div>
     </section>
@@ -967,25 +921,25 @@
             
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="assets/fachada.webp" alt="Fachada" id="fachada">
+                    <img src="assets/fachada.webp" alt="Fachada">
                     <div class="gallery-overlay">
                         <div class="gallery-text">Fachada Premium</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/recepcao.webp" alt="Recepção" id="recepcao">
+                    <img src="assets/recepcao.webp" alt="Recepção">
                     <div class="gallery-overlay">
                         <div class="gallery-text">Recepção Elegante</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/corredor.webp" alt="Corredor" id="corredor">
+                    <img src="assets/corredor.webp" alt="Corredor">
                     <div class="gallery-overlay">
                         <div class="gallery-text">Instalações Modernas</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/consultorio.webp" alt="Consultório" id="consultorio">
+                    <img src="assets/consultorio.webp" alt="Consultório">
                     <div class="gallery-overlay">
                         <div class="gallery-text">Consultório Equipado</div>
                     </div>
@@ -1025,6 +979,18 @@
             </div>
             <div class="about-image">
                 <img src="assets/capa.webp" alt="Clínica Oftalmo Vet">
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="map-section" id="map">
+        <div class="map-container">
+            <h2 class="section-title">Nossa <span class="gold-accent">Localização</span></h2>
+            <p class="section-subtitle">Visite-nos no coração de Betim, Minas Gerais</p>
+            
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.8234567890!2d-44.19119!3d-19.972873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6c30004223227%3A0xc126d46ef0c19e6b!2sClínica%20Veterinária%20Oftalmo%20Vet!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -1149,6 +1115,7 @@
                         <a href="#home">Início</a>
                         <a href="#services">Serviços</a>
                         <a href="#about">Sobre</a>
+                        <a href="#map">Localização</a>
                         <a href="#contact">Contato</a>
                     </div>
                 </div>
@@ -1214,6 +1181,19 @@
                 nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.08)';
             }
         });
+
+        // RESPONSIVE HERO BACKGROUND
+        function updateHeroBackground() {
+            const hero = document.querySelector('.hero');
+            if (window.innerWidth <= 768) {
+                hero.style.backgroundImage = "url('assets/capa_mobile.webp')";
+            } else {
+                hero.style.backgroundImage = "url('assets/capa_desktop.webp')";
+            }
+        }
+
+        window.addEventListener('resize', updateHeroBackground);
+        updateHeroBackground();
     </script>
 </body>
 </html>
