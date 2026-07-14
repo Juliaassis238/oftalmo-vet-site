@@ -211,6 +211,18 @@
   footer .fmeta{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--ivory-dim);text-align:right;line-height:1.6;}
   footer .flinks{display:flex;gap:26px;font-size:0.85rem;color:var(--ivory-dim);flex-wrap:wrap;}
 
+  /* ===== MASCOTE ===== */
+  .mascote-section{
+    position:relative;margin-top:-80px;padding:0 0 60px;z-index:10;text-align:center;
+  }
+  .mascote-section img{
+    max-width:300px;width:100%;height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.15));
+  }
+  @media(max-width:880px){
+    .mascote-section{margin-top:-60px;}
+    .mascote-section img{max-width:200px;}
+  }
+
   ::selection{background:var(--gold);color:var(--ink);}
 </style>
 </head>
@@ -274,6 +286,12 @@
     </div>
   </div>
 </section>
+
+<div class="mascote-section">
+  <div class="wrap">
+    <img src="assets/mascote.png" alt="Mascote Oftalmo Vet" />
+  </div>
+</div>
 
 <section class="services" id="servicos">
   <div class="wrap">
