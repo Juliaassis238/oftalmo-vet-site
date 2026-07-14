@@ -171,10 +171,16 @@
   /* ===== ABOUT ===== */
   .about .wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:start;}
   .about-figure{
-    aspect-ratio:4/5;position:relative;border:1px solid var(--line);overflow:hidden;
+    position:relative;border:1px solid var(--line);overflow:hidden;
     background:#f5f1e7;
+    line-height: 0;
   }
-  .about-figure svg{width:100%;height:100%;}
+  .about-figure img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit: contain;
+  }
   .about p{color:var(--ivory-dim);line-height:1.85;margin-bottom:20px;font-size:1rem;}
   .about-cred{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);}
   .about-cred .role{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;color:var(--gold);text-transform:uppercase;}
@@ -184,7 +190,7 @@
   .feat .eyebrow{display:block;margin-bottom:8px;}
   .feat h4{font-family:'Fraunces',serif;font-size:1.05rem;margin-bottom:6px;}
   .feat span.d{color:var(--ivory-dim);font-size:0.86rem;line-height:1.6;}
-  @media(max-width:880px){.about .wrap{grid-template-columns:1fr;}.feat-grid{grid-template-columns:1fr;}.about-figure{aspect-ratio:16/10;}}
+  @media(max-width:880px){.about .wrap{grid-template-columns:1fr;}.feat-grid{grid-template-columns:1fr;}.about-figure{aspect-ratio:auto;}}
 
   /* ===== GALLERY — real images rendered inline via SVG/duotone photography ===== */
   .gallery{background:#fafaf8;}
@@ -342,7 +348,7 @@
 <section class="about" id="sobre">
   <div class="wrap">
     <div class="about-figure reveal">
-      <img src="assets/capa.webp" alt="Dra. Marília Ribeiro" width="800" height="600" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+      <img src="assets/capa.webp" alt="Dra. Marília Ribeiro" width="800" height="400" loading="lazy">
     </div>
     <div class="about-copy reveal">
       <div class="sec-head" style="margin-bottom:0;">
