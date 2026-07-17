@@ -1,0 +1,17 @@
+Achados visuais e de código para o site oftalmo-vet
+
+1. A seção de apresentação usa atualmente a imagem:
+   - arquivo: /home/ubuntu/oftalmo-vet/assets/dra-microscopio.jpg
+   - referência encontrada em: /home/ubuntu/oftalmo-vet/index.html
+   - linha aproximada: 405
+
+2. A imagem atual mostra a doutora de costas/perfil usando o microscópio, com o rosto pouco visível.
+
+3. A imagem correta solicitada pelo usuário já existe no repositório:
+   - arquivo: /home/ubuntu/oftalmo-vet/galeria/atendimentos/atendimentos_01.jpg
+   - descrição: doutora olhando para a câmera, sentada em frente ao microscópio, rosto bem visível.
+
+4. Ainda falta localizar e corrigir o link do Instagram para:
+   - https://instagram.com/vetclinicaoftalmo
+
+Data: 2026-07-17
